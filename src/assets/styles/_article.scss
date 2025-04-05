@@ -1,0 +1,85 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+@layer base {
+  .article {
+    padding: 2rem;
+    background-color: $background-color;
+
+    h2 {
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    figure {
+      margin: 1rem 0;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid $secondary-color;
+        @include border-radius(10px);
+      }
+
+      figcaption {
+        text-align: center;
+        font-size: 0.8rem;
+        color: $secondary-color;
+      }
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      border-left: 4px solid $primary-color;
+      background-color: $light-color;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 2rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    // Pseudoclase :has()
+    // Aplicar estilos cuando figure contiene una imagen
+    figure:has(img) {
+      background-color: $light-color;
+      padding: 1rem;
+      @include border-radius(10px);
+    }
+
+    // Pseudoclase :is()
+    // Aplicar estilos a cualquier h2, h3, que estén dentro de article
+    :is(h2, h3) {
+      font-weight: bold;
+      color: $dark-color;
+    }
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+
+      h2 {
+        font-size: calculate-rem(20);
+      }
+
+      p, blockquote, ul, figure, figcaption {
+        font-size: 0.875rem;
+      }
+    }
+
+    @container (min-width: 600px) {
+      padding: 1.5rem;
+    }
+  }
+}

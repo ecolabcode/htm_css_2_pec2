@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "variables";
+
+// Personalizar variables de Bootstrap
+$primary: $primary-color;
+$secondary: $secondary-color;
+$success: $success-color;
+$info: $info-color;
+$warning: $warning-color;
+$danger: $danger-color;
+$light: $light-color;
+$dark: $dark-color;
+
+@import "~bootstrap/scss/bootstrap";

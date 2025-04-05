@@ -1,0 +1,65 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+@layer base {
+  .contact-form {
+    padding: 2dv;
+    background-color: $background-color;
+
+    @container (min-width: 600px) {
+      padding: 1.5dv;
+    }
+  }
+}
+
+@layer layout {
+  form {
+    max-width: 75cq;
+    margin: auto;
+
+    .btn-primary {
+      background-color: $primary-color;
+    }
+
+    @container (min-width: 600px) {
+      max-width: 60cq;
+    }
+  }
+}
+
+@layer utilities {
+  .mb-3 {
+    margin-bottom: 1dv;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.5dv;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.75dv;
+    border: 1px solid $secondary-color;
+    border-radius: 0.25dv;
+  }
+
+  textarea.form-control {
+    resize: vertical;
+  }
+
+  @media (max-width: 768px) {
+    .contact-form {
+      padding: 1dv;
+    }
+
+    form {
+      max-width: 100%;
+    }
+
+    .form-control, .btn-primary {
+      font-size: 0.875rem;
+    }
+  }
+}
