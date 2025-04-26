@@ -5,7 +5,7 @@
   "description": "Boilerplate for Advanced HTML/CSS Tools UOC students",
   "scripts": {
     "parcel:serve": "parcel -p 8123 --target web --open",
-    "parcel:build": "NODE_OPTIONS='--max-old-space-size=4096' parcel build --dist-dir dist --no-source-maps --no-cache",
+    "parcel:build": "NODE_OPTIONS='--max-old-space-size=8192' parcel build --dist-dir dist --no-source-maps --no-cache",
     "clean": "rimraf dist .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
