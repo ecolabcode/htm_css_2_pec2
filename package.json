@@ -4,13 +4,23 @@
   "private": true,
   "description": "Boilerplate for Advanced HTML/CSS Tools UOC students",
   "scripts": {
-    "parcel:serve": "parcel src/index.html -p 8123 --open",
-    "parcel:build": "NODE_OPTIONS='--max-old-space-size=4096' parcel build src/index.html --dist-dir dist --no-source-maps --no-cache",
+    "parcel:serve": "parcel -p 8123 --target web --open",
+    "parcel:build": "NODE_OPTIONS='--max-old-space-size=4096' parcel build --dist-dir dist --no-source-maps --no-cache",
     "clean": "rimraf dist .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
     "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
     "lint:css": "stylelint 'src/assets/styles/**/*.scss' --fix"
+  },
+  "targets": {
+    "web": {
+      "context": "browser",
+      "publicUrl": "./",
+      "source": "src/index.html",
+      "engines": {
+        "browsers": "last 2 versions, > 0.5%, not dead"
+      }
+    }
   },
   "repository": {
     "type": "git",
